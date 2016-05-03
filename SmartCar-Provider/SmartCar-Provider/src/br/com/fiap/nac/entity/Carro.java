@@ -30,8 +30,8 @@ public class Carro {
 	@Column(name = "COMBUSTIVEL")
 	@Enumerated(EnumType.STRING)
 	private Combustivel combustivel;
-	@Column(name = "KMPERCORRIDO")
-	private double kmPercorrido;
+	@Column(name = "KMPROXIMATROCAOLEO")
+	private double kmProximaTrocaOleo;
 	@Column(name = "KMCARRO")
 	private double kmCarro;
 	@Column(name = "PLACA")
@@ -77,14 +77,6 @@ public class Carro {
 		this.combustivel = combustivel;
 	}
 
-	public double getKmPercorrido() {
-		return kmPercorrido;
-	}
-
-	public void setKmPercorrido(double kmPercorrido) {
-		this.kmPercorrido = kmPercorrido;
-	}
-
 	public double getKmCarro() {
 		return kmCarro;
 	}
@@ -100,10 +92,20 @@ public class Carro {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+
+	public double getKmProximaTrocaOleo() {
+		return kmProximaTrocaOleo;
+	}
+
+	public void setKmProximaTrocaOleo(double kmProximaTrocaOleo) {
+		this.kmProximaTrocaOleo = kmProximaTrocaOleo;
+	}
 	
 	@Override
 	public String toString() {
-		return "km carro: " + this.kmCarro;
+		return "km carro: " + this.getKmProximaTrocaOleo();
 	}
+
+
 	
 }

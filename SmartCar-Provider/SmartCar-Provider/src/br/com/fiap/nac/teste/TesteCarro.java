@@ -44,7 +44,7 @@ public class TesteCarro {
 	   cr.setAno(2006);
 	   cr.setCombustivel(Combustivel.GASOLINAADT);
 	   cr.setKmCarro(153000);
-	   cr.setKmPercorrido(9000);
+	   cr.setKmProximaTrocaOleo(9000);
 	   cr.setMarca("VW");
 	   cr.setModelo("GOL");
 	   cr.setPlaca("XXX-XXX");
@@ -52,8 +52,8 @@ public class TesteCarro {
 	   CarroBO bo = new CarroBO();
 	   bo.cadastrar(cr);
 //	   bo.Buscar(1);
-	   
-	   bo.ValidarKm();
+	   bo.ValidarKm(cr);
+	 
    }
    
 }

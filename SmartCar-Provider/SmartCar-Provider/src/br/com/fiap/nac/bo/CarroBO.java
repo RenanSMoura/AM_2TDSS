@@ -36,10 +36,16 @@ public class CarroBO {
 		}
 	}
 
-	public void ValidarKm() {
+	public void ValidarKm(Carro carro) {
 		try {
 			CarroDAO carroDAO = new CarroDAOImpl(em);
-			carroDAO.consultarKmVeiculo();
+			if(carro.getKmProximaTrocaOleo() >= 9000){
+				carroDAO.consultarKmVeiculo(carro);
+				carro.setKmProximaTrocaOleo(0);
+				System.out.println("trocar Oléo");
+			} else {
+				carroDAO.consultarKmVeiculo(carro);
+			}
 		} catch (DBException e) {
 			e.printStackTrace();
 		}

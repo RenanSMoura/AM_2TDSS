@@ -51,9 +51,9 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 
 
 	@Override
-	public void consultarKmVeiculo() throws DBException {
-		Query query = em.createNativeQuery("select * from T_NAC_CARRO");
-		System.out.println(query.getResultList().toString());
+	public void consultarKmVeiculo(Carro carro) throws DBException {
+		Query query = em.createNativeQuery("select KMPROXIMATROCAOLEO from T_NAC_CARRO");
+		System.out.println(query.getSingleResult());
 	
 	}
 
