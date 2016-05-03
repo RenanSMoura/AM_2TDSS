@@ -1,0 +1,13 @@
+package br.com.fiap.nac.bo;
+
+import br.com.fiap.nac.dao.CarroDAO;
+import br.com.fiap.nac.dao.impl.CarroDAOImpl;
+import br.com.fiap.nac.entity.Carro;
+
+public class CarroBO {
+	
+	public void cadastrar(Carro carro){
+		CarroDAO carro = new CarroDAOImpl(em);
+	}
+
+}
