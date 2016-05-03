@@ -100,5 +100,10 @@ public class Carro {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "km carro: " + this.kmCarro;
+	}
+	
 }

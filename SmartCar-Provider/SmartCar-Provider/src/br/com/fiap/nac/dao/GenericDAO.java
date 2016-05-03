@@ -6,5 +6,5 @@ import br.com.fiap.nac.exception.EntityNotFoundException;
 public interface GenericDAO <T, K> {
 	public void cadastrar(T entidade) throws DBException;
 	public T buscar(K chave) throws EntityNotFoundException;
-	public void informarKm(double valorKm); 
+	public void consultarKmVeiculo() throws DBException; 
 }

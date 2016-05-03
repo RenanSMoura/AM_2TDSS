@@ -1,8 +1,11 @@
 package br.com.fiap.nac.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.fiap.nac.dao.GenericDAO;
 import br.com.fiap.nac.entity.Carro;
@@ -46,8 +49,14 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 		return entidade;
 	}
 
-	public void informarKm(double valorKm) {
 
+	@Override
+	public void consultarKmVeiculo() throws DBException {
+		Query query = em.createNativeQuery("select * from T_NAC_CARRO");
+		System.out.println(query.getResultList().toString());
+	
 	}
+
+
 
 }

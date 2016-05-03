@@ -30,13 +30,19 @@ public class CarroBO {
 		try {
 			CarroDAO carroDAO = new CarroDAOImpl(em);
 			carroDAO.buscar(chave);
+			System.out.println("foi");
 		} catch (EntityNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void ValidarKm(long kmAtual) {
-
+	public void ValidarKm() {
+		try {
+			CarroDAO carroDAO = new CarroDAOImpl(em);
+			carroDAO.consultarKmVeiculo();
+		} catch (DBException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
