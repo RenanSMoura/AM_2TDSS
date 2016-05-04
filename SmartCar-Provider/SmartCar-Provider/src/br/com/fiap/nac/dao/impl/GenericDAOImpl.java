@@ -49,14 +49,4 @@ public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 		return entidade;
 	}
 
-
-	@Override
-	public void consultarKmVeiculo(Carro carro) throws DBException {
-		Query query = em.createNativeQuery("select KMPROXIMATROCAOLEO from T_NAC_CARRO");
-		System.out.println(query.getSingleResult());
-	
-	}
-
-
-
 }

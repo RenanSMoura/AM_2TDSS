@@ -12,43 +12,38 @@ import br.com.fiap.nac.singleton.EntityManagerFactorySingleton;
 public class CarroBO {
 
 	private static EntityManager em = EntityManagerFactorySingleton.getInstance().createEntityManager();
-
+	
 	public void cadastrar(Carro carro) {
 		try {
-			if (carro.getAno() > 2005) {
-				CarroDAO carroDao = new CarroDAOImpl(em);
-				carroDao.cadastrar(carro);
-			} else {
-				System.out.println("Testando BO");
-			}
+			CarroDAO carroDao = new CarroDAOImpl(em);
+			carroDao.cadastrar(carro);
 		} catch (DBException e) {
 			e.printStackTrace();
-		}
+		}	
 	}
-
 	public void Buscar(long chave) {
 		try {
 			CarroDAO carroDAO = new CarroDAOImpl(em);
 			carroDAO.buscar(chave);
-			System.out.println("foi");
 		} catch (EntityNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-
-	public void ValidarKm(Carro carro) {
+	public boolean ValidarKm(double kmPercorrido, long chave) {
+		CarroDAO carroDAO = new CarroDAOImpl(em);
+		Carro carro;
 		try {
-			CarroDAO carroDAO = new CarroDAOImpl(em);
-			if(carro.getKmProximaTrocaOleo() >= 9000){
-				carroDAO.consultarKmVeiculo(carro);
+			carro = carroDAO.buscar(chave);
+			if(kmPercorrido >= carro.getKmProximaTrocaOleo()){
 				carro.setKmProximaTrocaOleo(0);
-				System.out.println("trocar Oléo");
+				return true;
 			} else {
-				carroDAO.consultarKmVeiculo(carro);
+				return false;
 			}
-		} catch (DBException e) {
+		} catch (EntityNotFoundException e) {
 			e.printStackTrace();
+			return false;
 		}
-	}
-
+	}			
 }
+

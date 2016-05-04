@@ -2,8 +2,6 @@ package br.com.fiap.nac.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,17 +17,14 @@ public class Carro {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCarro")
 	@Column(name = "ID")
 	private long id;
-
 	@Column(name = "MARCA")
 	private String marca;
 	@Column(name = "MODELO")
 	private String modelo;
 	@Column(name = "ANO")
 	private int ano;
-
 	@Column(name = "COMBUSTIVEL")
-	@Enumerated(EnumType.STRING)
-	private Combustivel combustivel;
+	private String combustivel;
 	@Column(name = "KMPROXIMATROCAOLEO")
 	private double kmProximaTrocaOleo;
 	@Column(name = "KMCARRO")
@@ -69,11 +64,11 @@ public class Carro {
 		this.ano = ano;
 	}
 
-	public Combustivel getCombustivel() {
+	public String getCombustivel() {
 		return combustivel;
 	}
 
-	public void setCombustivel(Combustivel combustivel) {
+	public void setCombustivel(String combustivel) {
 		this.combustivel = combustivel;
 	}
 
