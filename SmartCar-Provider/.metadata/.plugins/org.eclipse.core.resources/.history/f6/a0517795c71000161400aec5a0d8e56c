@@ -1,0 +1,19 @@
+package br.com.fiap.nac.bo;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.nac.dao.CarroDAO;
+import br.com.fiap.nac.dao.impl.CarroDAOImpl;
+import br.com.fiap.nac.entity.Carro;
+import br.com.fiap.nac.singleton.EntityManagerFactorySingleton;
+
+public class CarroBO {
+	
+	EntityManager em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+	
+	public void cadastrar(Carro carro){
+		CarroDAO carro = new CarroDAOImpl(em);
+		carro.cadastrar(carro);
+	}
+
+}

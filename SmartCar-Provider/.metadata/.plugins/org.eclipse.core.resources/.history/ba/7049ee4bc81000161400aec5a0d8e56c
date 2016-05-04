@@ -1,0 +1,68 @@
+package br.com.fiap.nac.teste;
+
+import static org.junit.Assert.*;
+
+import javax.persistence.EntityManager;
+
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import br.com.fiap.nac.bo.CarroBO;
+import br.com.fiap.nac.dao.CarroDAO;
+import br.com.fiap.nac.dao.impl.CarroDAOImpl;
+import br.com.fiap.nac.entity.Carro;
+import br.com.fiap.nac.entity.Combustivel;
+import br.com.fiap.nac.exception.DBException;
+import br.com.fiap.nac.exception.EntityNotFoundException;
+import br.com.fiap.nac.singleton.EntityManagerFactorySingleton;
+
+public class TesteCarro {
+
+	private static CarroDAO dao;
+	
+
+   @BeforeClass
+   public static void init(){
+	   EntityManager em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+	   dao = new CarroDAOImpl(em);
+   }
+
+   
+   @Test
+   public void testCadastrar(){
+	   Carro carro = new Carro();
+	   carro.setAno(2012);
+	   carro.setCombustivel(Combustivel.ALCOOL);
+	   carro.setId(0);
+	   carro.setModelo("Fusca");
+	  
+	   try{
+		   
+	   } catch(DBException e){
+		   Assert.fail();
+		   e.printStackTrace();
+	   }
+   }
+   
+   @Test
+   public void testBuscar(){
+	   Carro carro = new Carro();
+	   carro.setId(0);
+	   carro.setAno(2000);
+	  
+	   try {
+		   dao.cadastrar(carro);
+		   dao.buscar(carro.getId());
+		   Assert.assertNotEquals(0, carro.getId());
+	   } catch (DBException e){
+		   Assert.fail();
+		   e.printStackTrace();
+	   } catch (EntityNotFoundException e) {
+		   Assert.fail();
+		   e.printStackTrace();
+	}
+   }
+   
+}
+

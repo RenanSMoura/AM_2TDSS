@@ -1,0 +1,21 @@
+INDEX VERSION 1.127+C:\Users\Desenvolvimento\Documents\GitHub\AM_2TDSS\SmartCar-Provider\.metadata\.plugins\org.eclipse.jdt.core
+2185617132.index
+3974580528.index
+1498219845.index
+1115467115.index
+4041092966.index
+488532648.index
+2009002966.index
+1697886153.index
+3133528496.index
+305854171.index
+3686304600.index
+163172794.index
+1299022128.index
+3065916431.index
+4108727661.index
+1995173708.index
+2033211595.index
+1104511089.index
+30765161.index
+4155206848.index

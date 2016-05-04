@@ -1,0 +1,14 @@
+package br.com.fiap.nac.teste;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TesteCarro {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

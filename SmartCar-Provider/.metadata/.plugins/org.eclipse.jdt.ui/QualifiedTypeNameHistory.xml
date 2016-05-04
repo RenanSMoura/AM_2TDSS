@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="br.com.fiap.nac.dao.CarroDAO"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="br.com.fiap.nac.singleton.EntityManagerFactorySingleton"/>
+<fullyQualifiedTypeName name="br.com.fiap.nac.dao.impl.CarroDAOImpl"/>
+<fullyQualifiedTypeName name="br.com.fiap.nac.bo.CarroBO"/>
+</qualifiedTypeNameHistroy>
